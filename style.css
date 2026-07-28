@@ -1,0 +1,383 @@
+:root {
+    --primary: #00ffff;
+    --gold: #ffd700;
+    --bg-dark: #0f0f1a;
+    --card-bg: #1a1a2e;
+    --whatsapp-green: #25D366;
+    --windows-blue: #00a4ef; /* لون أزرق مخصص لنسخة الويندوز */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    padding: 0 0 80px 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.profile-img {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     border: 4px solid #00d2ff;
+     object-fit: cover;
+     box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+     margin-bottom: 15px;
+     transition: transform 0.3s ease;
+}
+
+#img {
+    position: relative;
+    width: 100%;
+    padding: 60px 20px;
+    background: radial-gradient(circle, #1a1a3a, #050510);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#h1 {
+    color: var(--primary);
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00fff0;
+    text-shadow: 0 0 10px rgba(0, 255, 240, 0.3);
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #a2a2d0;
+}
+
+.apps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-card {
+    background-color: #16213e;
+    border: 1px solid #0f3460;
+    border-radius: 15px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 530px; /* زيادة الطول قليلاً ليستوعب الزرين بشكل مريح */
+    justify-content: flex-start;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 240, 0.2);
+    border-color: #00fff0;
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    background-color: #0f3460;
+    padding: 5px;
+}
+
+.app-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.app-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    height: 45px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+}
+
+.platform-label {
+    font-size: 0.85rem;
+    color: #00fff0;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+/* تنسيقات عنوان نسخة الويندوز */
+.windows-label {
+    color: var(--windows-blue);
+    margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--whatsapp-green);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    background-color: #20ba5a;
+}
+
+/* تصميم الزر العادي (أندرويد) */
+.label {
+  background-color: transparent;
+  border: 2px solid rgb(91, 91, 240);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  width: 100%; 
+  max-width: 220px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 5px;
+  position: relative;
+  height: 55px;
+  overflow: hidden;
+}
+
+.label:hover {
+    box-shadow: 0 0 10px rgba(91, 91, 240, 0.5);
+}
+
+/* تصميم زر الويندوز (كمبيوتر) */
+.label.windows-btn {
+  border-color: var(--windows-blue);
+}
+
+.label.windows-btn:hover {
+    box-shadow: 0 0 10px rgba(0, 164, 239, 0.5);
+}
+
+.label::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  transition: all 0.4s ease;
+  border-radius: 100%;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input {
+  display: none;
+}
+
+.label .title {
+  font-size: 15px;
+  color: #fff;
+  transition: all 0.4s ease;
+  position: absolute;
+  left: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.label .title:last-child {
+  opacity: 0;
+  visibility: hidden;
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.label .circle {
+  height: 41px;
+  width: 41px;
+  border-radius: 50%;
+  background-color: rgb(91, 91, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 5px;
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* تغيير لون دائرة الأنميشن لزر الويندوز */
+.label.windows-btn .circle {
+    background-color: var(--windows-blue);
+}
+
+.label .circle .icon {
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.label .circle .square {
+  aspect-ratio: 1;
+  width: 12px;
+  border-radius: 2px;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.label .circle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #16213e; 
+  width: 100%;
+  height: 0;
+  transition: all 0.4s ease;
+}
+
+/* حالات التفعيل والأنميشن */
+.label:has(.input:checked) {
+  width: 55px;
+  border-color: rgb(91, 91, 240);
+  animation: installed 0.4s ease 3.5s forwards;
+}
+
+.label.windows-btn:has(.input:checked) {
+  border-color: var(--windows-blue);
+}
+
+.label:has(.input:checked)::before {
+  animation: rotate 3s ease-in-out 0.4s forwards;
+}
+
+.label .input:checked + .circle {
+  animation:
+    pulse 1s forwards,
+    circleDelete 0.2s ease 3.5s forwards;
+  transform: rotate(180deg);
+  right: 5px;
+}
+
+.label .input:checked + .circle::before {
+  animation: installing 3s ease-in-out forwards;
+}
+
+.label .input:checked + .circle .icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input:checked ~ .circle .square {
+  opacity: 1;
+  visibility: visible;
+}
+
+.label .input:checked ~ .title {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input:checked ~ .title:last-child {
+  animation: showInstalledMessage 0.4s ease 3.5s forwards;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 16px rgba(255, 255, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+@keyframes installing {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(-90deg) translate(23px) rotate(0); opacity: 1; visibility: visible; }
+  99% { transform: rotate(270deg) translate(23px) rotate(270deg); opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes installed {
+  100% { width: 100%; max-width: 220px; border-color: rgb(35, 174, 35); }
+}
+
+@keyframes circleDelete {
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes showInstalledMessage {
+  100% { opacity: 1; visibility: visible; right: 50%; transform: translateX(50%); width: 100%; }
+}
