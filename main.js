@@ -7,11 +7,11 @@ function startDownload(checkbox, fileName) {
         if (fileName) {
             let downloadUrl = '';
 
-            // إذا كان الملف مضغوطاً (.zip) يتم التحميل من قسم Releases على GitHub
+            // تحويل ملفات الـ ZIP للتحميل من الـ Releases مباشرة
             if (fileName.endsWith('.zip')) {
                 downloadUrl = `https://github.com/ahmedmohamed17092011-dot/Apps/releases/download/v1.0.0/${fileName}`;
             } else {
-                // ملفات الـ APK تتحمل بشكل مباشر من المستودع
+                // باقي الملفات (الـ APK) تتحمل من الملفات الرئيسية للمستودع
                 downloadUrl = fileName;
             }
 
